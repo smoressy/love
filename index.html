@@ -92,6 +92,13 @@
         .submit-button:hover {
             background-color: #e0a800;
         }
+
+        .error-message {
+            text-align: center;
+            color: #fff;
+            font-size: 1.2em;
+            margin-top: 20px;
+        }
     </style>
 </head>
 
@@ -107,9 +114,13 @@
         }
 
         document.querySelector('.submit-button').addEventListener('click', redirect);
+
         async function fetchPosts() {
             try {
                 const response = await fetch('https://gale-aurora-computer-congratulations.trycloudflare.com/posts');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
                 const posts = await response.json();
                 const postsContainer = document.getElementById('posts');
 
@@ -157,6 +168,11 @@
                 });
             } catch (error) {
                 console.error('Error fetching posts:', error);
+                const postsContainer = document.getElementById('posts');
+                const errorMessage = document.createElement('div');
+                errorMessage.className = 'error-message';
+                errorMessage.textContent = 'Sorry, it seems the servers are offline. Try again later';
+                postsContainer.appendChild(errorMessage);
             }
         }
 
