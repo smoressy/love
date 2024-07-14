@@ -1,65 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/smoressy/love/main/star-removebg-preview.png">
     <title>smoresxo</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/smoressy/love/main/star-removebg-preview.png">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            background-color: #1a1a1a;
-            color: #ccc;
-            font-family: Arial, sans-serif;
-            text-align: center;
+        /* Basic Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1e1e1e;
+            color: #fff;
+            font-family: 'Nunito', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
         }
 
         .container {
             max-width: 800px;
-            margin: auto;
+            width: 100%;
             padding: 20px;
+            border: 2px solid #444;
+            border-radius: 10px;
+            background-color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
 
         .bio {
-            color: #888;
-            font-style: italic;
-            margin-bottom: 20px;
+            color: #bbb;
+            margin: 20px 0;
         }
 
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin: 10px;
+        a {
+            color: #ff79c6;
             text-decoration: none;
-            color: #ccc;
             transition: color 0.3s;
         }
 
-        .social-links a:hover {
-            color: #38b6ff;
+        a:hover {
+            color: #ffb86c;
+        }
+
+        .socials {
+            margin: 20px 0;
+        }
+
+        .socials a {
+            display: block;
+            margin: 10px 0;
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            margin-top: 20px;
+            color: #777;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .title {
+                font-size: 2em;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+
+        /* Animations */
+        .container {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer Styling */
+        .footer p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer i {
+            margin-left: 5px;
+            color: #ff79c6;
         }
     </style>
 </head>
-
 <body>
     <div class="container">
-        <h1>Welcome to smoresxo's Page!</h1>
-        <div class="bio">
-            <p>Hi, I'm smoresxo! I love watching YouTube, coding awesome projects, and enjoying a good smoke. My deep love for s'mores has been with me since I was 10, inspiring my online alias.</p>
+        <h1 class="title">SmoresXO</h1>
+        <p class="bio">What I like to do in life is watch YouTube, smoke weed, and code awesome code. I have a deep love for s'mores since it's engraved in my username ever since 2018 when I was 10. I made it and I've never changed it since.</p>
+        
+        <div class="socials">
+            <h2>Check out my socials:</h2>
+            <a href="https://www.youtube.com/@smorezxo" target="_blank"><i class="fab fa-youtube"></i> YouTube: @smorezxo</a>
+            <a href="https://chromewebstore.google.com/detail/tiktok-adblock/aahcajnjocphmgaaommnljoecoahnkn" target="_blank"><i class="fab fa-chrome"></i> TikTok Adblocker</a>
+            <a href="https://chromewebstore.google.com/detail/youtube-unwatched/phajobgmfnpoeaonmggibppopcdoibac?hl=en" target="_blank"><i class="fab fa-chrome"></i> YouTube Sort by Unwatched</a>
+            <a href="https://chromewebstore.google.com/detail/chatgpt-unlocker/bgggajnibbflhbleppokhdodnceaajpd?hl=en-US" target="_blank"><i class="fab fa-chrome"></i> ChatGPT Unlocker</a>
         </div>
         
-        <div class="social-links">
-            <a href="https://www.youtube.com/@smorezxo" target="_blank">YouTube</a>
-            <a href="https://chromewebstore.google.com/detail/tiktok-adblock/aahcajnjocphmgaaommnljoecoahnkn" target="_blank">TikTok Adblocker</a>
-            <a href="https://chromewebstore.google.com/detail/youtube-unwatched/phajobgmfnpoeaonmggibppopcdoibac?hl=en" target="_blank">YouTube Sort by Unwatched</a>
-            <a href="https://chromewebstore.google.com/detail/chatgpt-unlocker/bgggajnibbflhbleppokhdodnceaajpd?hl=en-US" target="_blank">ChatGPT Unlocker</a>
+        <div class="footer">
+            <p>&copy; 2024 SmoresXO <i class="fas fa-heart"></i></p>
         </div>
     </div>
 </body>
-
 </html>
