@@ -42,6 +42,10 @@
         .bio {
             color: #ccc;
             margin: 20px 0;
+            font-size: 1.2em;
+            font-style: italic;
+            border-top: 1px solid #444;
+            padding-top: 10px;
         }
 
         a {
@@ -121,18 +125,19 @@
         /* Form Styles */
         .survey-form {
             margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .survey-form label {
-            display: block;
-            margin-bottom: 10px;
+            margin-right: 10px;
             font-size: 1.2em;
         }
 
-        .survey-form select, .survey-form input[type="text"] {
-            width: 100%;
+        .survey-form select {
             padding: 10px;
-            margin-bottom: 10px;
+            margin-right: 10px;
             border: none;
             border-radius: 5px;
             background: #2a2a2a;
@@ -170,7 +175,6 @@
                 <option value="Social Media">Social Media</option>
                 <option value="Discord">Discord</option>
                 <option value="Direct URL">Direct URL</option>
-                <option value="Other">Other</option>
             </select>
             <button onclick="submitSurvey()">Submit</button>
         </div>
@@ -198,11 +202,10 @@
     <script>
         function submitSurvey() {
             const source = document.getElementById('source').value;
-            const customInput = document.getElementById('custom-input').value;
             const webhookUrl = "https://discord.com/api/webhooks/1262495263147298917/daOw4d65ZWOVABaszmHpttKJILaXAif6MxfH8C1lqZMz9OKe0UCPzRRlXj7U1dSM83dG";
 
             const data = {
-                content: `How did you hear about us? ${source}${customInput ? `: ${customInput}` : ''}`
+                content: `How did you hear about us? ${source}`
             };
 
             fetch(webhookUrl, {
@@ -218,14 +221,6 @@
                 }
             }).catch(error => console.error('Error:', error));
         }
-
-        document.getElementById('source').addEventListener('change', function() {
-            if (this.value === 'Other') {
-                document.getElementById('custom-input').style.display = 'block';
-            } else {
-                document.getElementById('custom-input').style.display = 'none';
-            }
-        });
     </script>
 </body>
 </html>
