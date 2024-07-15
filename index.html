@@ -192,24 +192,6 @@
             background: #ffb86c;
         }
 
-        .thank-you {
-            color: #ffb86c;
-            margin-top: 10px;
-            animation: fadeInOut 2s forwards;
-        }
-
-        @keyframes fadeInOut {
-            0% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
         /* Responsive Design */
         @media (max-width: 600px) {
             .title {
@@ -247,12 +229,7 @@
     <div class="container">
         <h1 class="title">smoresxo</h1>
         <img src="https://raw.githubusercontent.com/smoressy/love/main/profile.jpg" alt="Profile Picture" class="profile-picture">
-        <p class="bio" id="bio">
-            I’m all about vibing with YouTube, chilling with za, and slinging some killer code. S’mores are my jam—it’s in my username and has been since I was 10 back in 2018. Made it, owned it, never changed it. <br><br>
-            Over the years, I've delved deep into the world of coding, creating various projects that reflect my creativity and technical skills. When I'm not coding, you can find me exploring new music, binge-watching my favorite YouTubers, or getting lost in a good book. I’m also a big fan of outdoor adventures, especially camping trips where I can enjoy the starry night sky and, of course, make some delicious s’mores by the campfire. <br><br>
-            My passion for technology extends beyond coding. I love experimenting with new gadgets and tech trends, always looking for ways to integrate them into my projects. Whether it's developing new Chrome extensions or finding innovative solutions to everyday problems, I'm constantly pushing myself to learn and grow. <br><br>
-            Community is important to me, and I love connecting with like-minded individuals who share my interests. Feel free to reach out if you want to chat about tech, YouTube, or anything else that piques your curiosity!
-        </p>
+        <p class="bio" id="bio">I’m all about vibing with YouTube, chilling with za, and slinging some killer code. S’mores are my jam—it’s in my username and has been since I was 10 back in 2018. Made it, owned it, never changed it.</p>
         
         <div class="section" id="youtube">
             <h2>Check out my YouTube:</h2>
@@ -265,9 +242,9 @@
             <a href="https://chromewebstore.google.com/detail/youtube-unwatched/phajobgmfnpoeaonmggibppopcdoibac?hl=en" target="_blank"><i class="fab fa-chrome"></i> YouTube Sort by Unwatched</a>
             <a href="https://chromewebstore.google.com/detail/chatgpt-unlocker/bgggajnibbflhbleppokhdodnceaajpd?hl=en-US" target="_blank"><i class="fab fa-chrome"></i> ChatGPT Unlocker</a>
         </div>
-
-        <div class="latest-projects">
-            <h2>Latest Projects</h2>
+        
+        <div class="section latest-projects">
+            <h2>Latest Projects:</h2>
             <div class="project">
                 <h3>Project Title 1</h3>
                 <p>Short description of the project.</p>
@@ -303,21 +280,6 @@
                 : "url('https://raw.githubusercontent.com/smoressy/love/main/light-background.jpg') no-repeat center center fixed";
             document.body.style.backgroundSize = 'cover';
         });
-
-        // Fade out and remove "Thank you for sharing!" message
-        setTimeout(() => {
-            const thankYouMessage = document.querySelector('.thank-you');
-            if (thankYouMessage) {
-                thankYouMessage.style.opacity = '0';
-                setTimeout(() => {
-                    thankYouMessage.remove();
-                    const separator = document.querySelector('.separator');
-                    if (separator) {
-                        separator.remove();
-                    }
-                }, 1000);
-            }
-        }, 1000);
     </script>
 </body>
 </html>
