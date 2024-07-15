@@ -117,11 +117,67 @@
                 transform: translateY(0);
             }
         }
+
+        /* Form Styles */
+        .survey-form {
+            margin: 20px 0;
+        }
+
+        .survey-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .survey-form select, .survey-form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            background: #2a2a2a;
+            color: #fff;
+        }
+
+        .survey-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #ff79c6;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .survey-form button:hover {
+            background: #ffb86c;
+        }
+
+        .thank-you {
+            font-size: 1.5em;
+            color: #ff79c6;
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1 class="title">smoresxo</h1>
+        <div class="survey-form">
+            <label for="source">How did you hear about us?</label>
+            <select id="source">
+                <option value="Social Media">Social Media</option>
+                <option value="Discord">Discord</option>
+                <option value="TN">TN</option>
+                <option value="Direct URL">Direct URL</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="text" id="custom-input" placeholder="Please specify if other">
+            <button onclick="submitSurvey()">Submit</button>
+        </div>
+        <p class="thank-you">Thank you for sharing!</p>
+        
         <p class="bio">I’m all about vibing with YouTube, chilling with za, and slinging some killer code. S’mores are my jam—it’s in my username and has been since I was 10 back in 2018. Made it, owned it, never changed it.</p>
         
         <div class="section">
@@ -140,5 +196,38 @@
             <p>&copy; 2024 smoresxo <i class="fas fa-heart"></i></p>
         </div>
     </div>
+
+    <script>
+        function submitSurvey() {
+            const source = document.getElementById('source').value;
+            const customInput = document.getElementById('custom-input').value;
+            const webhookUrl = "https://discord.com/api/webhooks/1262495263147298917/daOw4d65ZWOVABaszmHpttKJILaXAif6MxfH8C1lqZMz9OKe0UCPzRRlXj7U1dSM83dG";
+
+            const data = {
+                content: `How did you hear about us? ${source}${customInput ? `: ${customInput}` : ''}`
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(response => {
+                if (response.ok) {
+                    document.querySelector('.survey-form').style.display = 'none';
+                    document.querySelector('.thank-you').style.display = 'block';
+                }
+            }).catch(error => console.error('Error:', error));
+        }
+
+        document.getElementById('source').addEventListener('change', function() {
+            if (this.value === 'Other') {
+                document.getElementById('custom-input').style.display = 'block';
+            } else {
+                document.getElementById('custom-input').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
