@@ -37,6 +37,7 @@
             background: rgba(51, 51, 51, 0.9);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             animation: fadeIn 1s ease-in-out;
+            overflow: hidden;
         }
 
         .bio {
@@ -68,12 +69,15 @@
             font-size: 2em;
             margin-bottom: 10px;
             color: #ffb86c;
+            position: relative;
+            animation: slideInLeft 1s ease-in-out;
         }
 
         .section a {
             display: block;
             margin: 10px 0;
             font-size: 1.2em;
+            animation: slideInRight 1s ease-in-out;
         }
 
         .title {
@@ -81,6 +85,7 @@
             font-size: 3em;
             margin-bottom: 20px;
             color: #ff79c6;
+            animation: bounceIn 1s ease-in-out;
         }
 
         .footer {
@@ -97,6 +102,40 @@
         .footer i {
             margin-left: 5px;
             color: #ff79c6;
+        }
+
+        .floating-element {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 100px;
+            height: 100px;
+            animation-duration: 6s;
+            top: 10%;
+            left: 10%;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            animation-duration: 7s;
+            top: 20%;
+            right: 15%;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 60px;
+            height: 60px;
+            animation-duration: 4s;
+            bottom: 10%;
+            left: 20%;
         }
 
         /* Responsive Design */
@@ -118,6 +157,57 @@
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
                 transform: translateY(0);
             }
         }
@@ -167,6 +257,9 @@
     </style>
 </head>
 <body>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
     <div class="container">
         <h1 class="title">smoresxo</h1>
         <div class="survey-form">
