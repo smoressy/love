@@ -137,6 +137,45 @@
             left: 20%;
         }
 
+        .floating-triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 60px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            animation: float 5s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        .floating-triangle:nth-child(5) {
+            border-bottom-width: 100px;
+            border-left-width: 50px;
+            border-right-width: 50px;
+            animation-duration: 6s;
+            top: 30%;
+            left: 15%;
+        }
+
+        .floating-triangle:nth-child(6) {
+            border-bottom-width: 80px;
+            border-left-width: 40px;
+            border-right-width: 40px;
+            animation-duration: 7s;
+            top: 50%;
+            right: 20%;
+        }
+
+        .floating-triangle:nth-child(7) {
+            border-bottom-width: 60px;
+            border-left-width: 30px;
+            border-right-width: 30px;
+            animation-duration: 4s;
+            bottom: 20%;
+            left: 40%;
+        }
+
         /* Responsive Design */
         @media (max-width: 600px) {
             .title {
@@ -259,6 +298,9 @@
     <div class="floating-element"></div>
     <div class="floating-element"></div>
     <div class="floating-element"></div>
+    <div class="floating-triangle"></div>
+    <div class="floating-triangle"></div>
+    <div class="floating-triangle"></div>
     <div class="container">
         <h1 class="title">smoresxo</h1>
         <div class="survey-form">
