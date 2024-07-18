@@ -37,6 +37,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             animation: fadeIn 1s ease-in-out;
             overflow: hidden;
+            position: relative;
         }
 
         .bio {
@@ -355,6 +356,18 @@
                 }
             }).catch(error => console.error('Error:', error));
         }
+
+        // Function to set random rotation for triangles
+        function setRandomRotation() {
+            const triangles = document.querySelectorAll('.floating-triangle');
+            triangles.forEach(triangle => {
+                const rotation = Math.random() * 360;
+                triangle.style.transform = `rotate(${rotation}deg)`;
+            });
+        }
+
+        // Set random rotation on page load
+        window.onload = setRandomRotation;
     </script>
 </body>
 </html>
