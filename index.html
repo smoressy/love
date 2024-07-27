@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="https://smoresxo.com/" />
+  <title>smoresxo</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #000000, #060606);
+      color: #FFFFFF;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    
+    .container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .social-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .social-button {
+      background-color: #FFFFFF;
+      color: #000000;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 200px;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 25px;
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+      animation: pulse 2s infinite;
+    }
+    
+    .social-button:hover {
+      background-color: #F0F0F0;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(255, 255, 255, 0.2);
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideInFromTop {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes slideInFromLeft {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
+      70% { box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>smoresxo</h1>
+    <p>Jun 21 2008 · 15 years old · NY</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/smoresxo" class="social-button">Instagram</a>
+      <a href="https://www.tiktok.com/@smoresxo" class="social-button">TikTok</a>
+      <a href="https://www.youtube.com/@smorezxo" class="social-button">YouTube</a>
+    </div>
+  </div>
+</body>
+</html>
 
