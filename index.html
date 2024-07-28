@@ -4,9 +4,23 @@
   <base href="https://smoresxo.com/" />
   <title>smoresxo</title>
   <style>
+    /* Material You-inspired color palette */
+    :root {
+      --primary-color: #6200ee;
+      --on-primary-color: #ffffff;
+      --secondary-color: #03dac6;
+      --background-color: #121212;
+      --surface-color: #1f1f1f;
+      --error-color: #cf6679;
+      --on-secondary-color: #000000;
+      --on-background-color: #ffffff;
+      --on-surface-color: #ffffff;
+      --on-error-color: #000000;
+    }
+
     body {
-      background: linear-gradient(135deg, #000000, #060606);
-      color: #FFFFFF;
+      background: var(--background-color);
+      color: var(--on-background-color);
       font-family: 'Arial', sans-serif;
       display: flex;
       align-items: center;
@@ -28,11 +42,13 @@
     h1 {
       font-size: 5rem;
       margin-bottom: 0.5rem;
+      color: var(--primary-color);
     }
     
     p {
       font-size: 1.2rem;
       margin-bottom: 2rem;
+      color: var(--on-background-color);
     }
     
     .social-links {
@@ -43,46 +59,37 @@
     }
     
     .social-button {
-      background-color: #FFFFFF;
-      color: #000000;
-      border: none;
+      background-color: var(--primary-color);
+      color: var(--on-primary-color);
+      border: 2px solid var(--primary-color);
       padding: 0.8rem 2rem;
       font-size: 1.2rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease;
       width: 200px;
       text-decoration: none;
       text-align: center;
       border-radius: 25px;
-      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
-      animation: pulse 2s infinite;
     }
     
     .social-button:hover {
-      background-color: #F0F0F0;
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
       transform: translateY(-3px);
-      box-shadow: 0 6px 8px rgba(255, 255, 255, 0.2);
     }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes slideInFromTop {
-      from { transform: translateY(-100px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-    
-    @keyframes slideInFromLeft {
-      from { transform: translateX(-100px); opacity: 0; }
-      to { transform: translateX(0); opacity: 1; }
-    }
-    
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4); }
-      70% { box-shadow: 0 0 20px 20px rgba(255, 255, 255, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .social-button {
+        width: 150px;
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
+      }
     }
   </style>
 </head>
@@ -98,4 +105,3 @@
   </div>
 </body>
 </html>
-
